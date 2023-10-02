@@ -42,7 +42,9 @@ def is_night():
 if is_iss_overhead() and is_night():
     email_address = input("Enter your email address: ")
     password = input("Enter your password")
+    # connect to email server
     connection = smtplib.SMTP("smtp.gmail.com")
+    # securing our connection to the email server
     connection.starttls()
     connection.login(email_address, password)
     connection.sendmail(
